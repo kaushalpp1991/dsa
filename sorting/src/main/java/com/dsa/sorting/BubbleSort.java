@@ -10,7 +10,7 @@ public class BubbleSort {
 		if(arrayToSort == null || arrayToSort.length < 2 || comparator == null) {
 			return;
 		}
-		
+		boolean isAlreadySorted= true;
 		for(int i=0; i< arrayToSort.length; i++) {
 			
 			for(int j=0; j<arrayToSort.length-1; j++) {
@@ -18,9 +18,14 @@ public class BubbleSort {
 					int smallerElement = arrayToSort[j+1];
 					arrayToSort[j+1] = arrayToSort[j];
 					arrayToSort[j] = smallerElement;
+					isAlreadySorted = false;
 				}
+				
 			}
-			
+			//If no swapping found that means array is already sorted
+			if(isAlreadySorted) {
+				break;
+			}
 			
 		}
 		

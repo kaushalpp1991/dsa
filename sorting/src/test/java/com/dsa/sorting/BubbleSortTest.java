@@ -45,6 +45,18 @@ public class BubbleSortTest {
 		assertArrayEquals(sortedArray, arrayToSort);
 	}
 	
+	
+	@Test
+	public void should_not_sort_already_sorted_list() {
+		int arrayToSort[] = new int[] {1,2,5,7,10,19};
+		int sortedArray[] =  new int[] {1,2,5,7,10,19};
+		
+		BubbleSort.sort(arrayToSort, (x,y) -> x-y);
+		
+		assertArrayEquals(sortedArray, arrayToSort);
+	}
+	
+	
 	@Test
 	public void should_sort_passed_list_in_descending_order() {
 		int arrayToSort[] = new int[] {7,5,2,10,19,1};
